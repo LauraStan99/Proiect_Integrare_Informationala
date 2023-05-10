@@ -1,8 +1,9 @@
-package com.example.csvdatasource.models;
+package com.example.integration.models;
 
-import java.io.Serializable;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
-public class InpatientCharges implements Comparable<InpatientCharges>, Serializable {
+@XmlRootElement
+public class InpatientChargesView {
     private Integer providerId;
     private String providerName;
     private String providerCity;
@@ -11,17 +12,17 @@ public class InpatientCharges implements Comparable<InpatientCharges>, Serializa
     private String providerRegion;
     private Double totalPayments;
 
-    public InpatientCharges() {
+    public InpatientChargesView() {
     }
 
-    public InpatientCharges(String[] attributes){
-        this.providerId = Integer.parseInt(attributes[0]);
-        this.providerName = attributes[1];
-        this.providerCity = attributes[2];
-        this.providerState = attributes[3];
-        this.providerZipCode = Integer.parseInt(attributes[4]);
-        this.providerRegion = attributes[5];
-        this.totalPayments = Double.parseDouble(attributes[6].substring(1));
+    public InpatientChargesView(Integer providerId, String providerName, String providerCity, String providerState, Integer providerZipCode, String providerRegion, Double totalPayments) {
+        this.providerId = providerId;
+        this.providerName = providerName;
+        this.providerCity = providerCity;
+        this.providerState = providerState;
+        this.providerZipCode = providerZipCode;
+        this.providerRegion = providerRegion;
+        this.totalPayments = totalPayments;
     }
 
     public Integer getProviderId() {
@@ -78,23 +79,5 @@ public class InpatientCharges implements Comparable<InpatientCharges>, Serializa
 
     public void setTotalPayments(Double totalPayments) {
         this.totalPayments = totalPayments;
-    }
-
-    @Override
-    public String toString() {
-        return "ImpatientCharges{" +
-                "providerId=" + providerId +
-                ", providerName='" + providerName + '\'' +
-                ", providerCity='" + providerCity + '\'' +
-                ", providerState='" + providerState + '\'' +
-                ", providerZipCode=" + providerZipCode +
-                ", providerRegion='" + providerRegion + '\'' +
-                ", totalPayments=" + totalPayments +
-                '}';
-    }
-
-    @Override
-    public int compareTo(InpatientCharges o) {
-        return this.providerZipCode.compareTo(o.providerZipCode);
     }
 }
