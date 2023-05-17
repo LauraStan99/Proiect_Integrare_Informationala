@@ -1,7 +1,7 @@
 package com.example.integration.services;
 
-import com.example.integration.models.AveragePaymentsAnalyticsView;
-import com.example.integration.models.PaymentsByRatingIntegrationView;
+import com.example.integration.analyticsmodels.AveragePaymentsAnalyticsView;
+import com.example.integration.integrmodels.PaymentsByRatingIntegrationView;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;

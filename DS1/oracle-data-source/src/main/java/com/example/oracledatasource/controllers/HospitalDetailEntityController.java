@@ -1,17 +1,17 @@
 package com.example.oracledatasource.controllers;
 
+import com.example.oracledatasource.models.HospitalDetailsByRegion;
+import com.example.oracledatasource.models.Hospitaladdresses;
 import com.example.oracledatasource.models.Hospitaldetails;
+import com.example.oracledatasource.repositories.IHospitalAddressesRepository;
 import com.example.oracledatasource.repositories.IHospitalDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/oracle/hospitaldetail")

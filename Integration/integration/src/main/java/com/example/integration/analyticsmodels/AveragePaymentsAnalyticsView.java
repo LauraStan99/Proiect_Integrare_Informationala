@@ -1,27 +1,17 @@
-package com.example.integration.models;
+package com.example.integration.analyticsmodels;
 
-public class PaymentsByRatingIntegrationView {
-    // from Oracle
-    private String hospitalName;
+public class AveragePaymentsAnalyticsView {
+    // field: from PaymentsByRatingIntegration
     private String hospitalOverallRating;
-    // from CSV
+    // computed field : from PaymentsByRatingIntegration
     private Double averageTotalPayments;
 
-    public PaymentsByRatingIntegrationView() {
+    public AveragePaymentsAnalyticsView() {
     }
 
-    public PaymentsByRatingIntegrationView(String hospitalName, String hospitalOverallRating, Double averageTotalPayments) {
-        this.hospitalName = hospitalName;
+    public AveragePaymentsAnalyticsView(String hospitalOverallRating, Double averageTotalPayments) {
         this.hospitalOverallRating = hospitalOverallRating;
         this.averageTotalPayments = averageTotalPayments;
-    }
-
-    public String getHospitalName() {
-        return hospitalName;
-    }
-
-    public void setHospitalName(String hospitalName) {
-        this.hospitalName = hospitalName;
     }
 
     public String getHospitalOverallRating() {

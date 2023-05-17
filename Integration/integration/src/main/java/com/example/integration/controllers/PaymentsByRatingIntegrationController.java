@@ -1,6 +1,6 @@
 package com.example.integration.controllers;
 
-import com.example.integration.models.PaymentsByRatingIntegrationView;
+import com.example.integration.integrmodels.PaymentsByRatingIntegrationView;
 import com.example.integration.services.PaymentsByRatingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

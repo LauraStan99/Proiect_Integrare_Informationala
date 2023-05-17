@@ -24,4 +24,11 @@ public class MedicalCostEntityController {
         List<MedicalCost> medicalCosts = repository.findItemByRegion(regionName);
         return new ResponseEntity<>(medicalCosts, HttpStatus.OK);
     }
+
+    @GetMapping()
+    public ResponseEntity<List<MedicalCost>> getAllMedicalCost()
+    {
+        List<MedicalCost> medicalCosts = repository.findAll();
+        return new ResponseEntity<>(medicalCosts, HttpStatus.OK);
+    }
 }
